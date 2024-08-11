@@ -117,9 +117,314 @@ body {
 </details>
 
 <details>
-<summary>3- </summary>
+<summary>3-grid-template-columns and grid-template-rows </summary>
 
-```html
+# 3-grid-template-columns and grid-template-rows
+
+### github_projects/project-css-grid-flex/my_app/src/components/Grid/GridStyles.css:
+
+```css
+.container>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #ffeead;
+    background-color: #ffeead;
+}
+
+.container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 100px auto 100px;
+    grid-template-rows: 40px 40px;
+}
+
+.container>div:nth-child(1n) {
+    background-color: #96ceb4;
+}
+
+.container>div:nth-child(3n) {
+    background-color: #88d8b0;
+}
+
+.container>div:nth-child(2n) {
+    background-color: #ff6f69;
+}
+
+.container>div:nth-child(4n) {
+    background-color: #ffcc5c;
+}
+```
+
+<img width="1332" alt="image" src="https://github.com/user-attachments/assets/6335bdc3-fd6b-4f22-b464-e70e26e6168f">
+
+### github_projects/project-css-grid-flex/my_app/src/components/Grid/GridStyles.css:
+
+```css
+.container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+```
+
+```css
+.container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+```
+
+```css
+.container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+}
+```
+
+<img width="1332" alt="image" src="https://github.com/user-attachments/assets/769e0c82-7a0f-46af-a136-126f109a8b93">
+
+</details>
+
+<details>
+<summary>4-positioning-items-in-grid-with grid-column-start and grid-column-end </summary>
+
+# 4-positioning-items-in-grid-with grid-column-start and grid-column-end
+
+### github_projects/project-css-grid-flex/my_app/src/components/Grid/Grid.jsx:
+
+```css
+import React from "react";
+import "./GridStyles.css";
+
+const Grid = () => {
+  return (
+    <section className="container">
+      <div class="header">HEADER</div>
+      <div class="menu">MENU</div>
+      <div class="content">CONTENT</div>
+      <div class="footer">FOOTER</div>
+    </section>
+  );
+};
+
+export default Grid;
+```
+
+### github_projects/project-css-grid-flex/my_app/src/components/Grid/GridStyles.css:
+
+```css
+.container>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #ffeead;
+    background-color: #ffeead;
+}
+
+.container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 40px 200px 40px;
+}
+
+.header {}
+
+.menu {}
+
+.content {}
+
+.footer {}
+
+.container>div:nth-child(1n) {
+    background-color: #96ceb4;
+}
+
+.container>div:nth-child(3n) {
+    background-color: #88d8b0;
+}
+
+.container>div:nth-child(2n) {
+    background-color: #ff6f69;
+}
+
+.container>div:nth-child(4n) {
+    background-color: #ffcc5c;
+}
+```
+
+<img width="1332" alt="image" src="https://github.com/user-attachments/assets/68c2918b-fbda-4681-8eea-8235b1f98c64">
+
+### github_projects/project-css-grid-flex/my_app/src/components/Grid/GridStyles.css:
+
+```css
+.container>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #ffeead;
+    background-color: #ffeead;
+}
+
+.container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 40px 200px 40px;
+}
+
+.header {
+    grid-column-start: 1;
+    grid-column-end: 13;
+}
+
+.menu {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.content {
+    grid-column-start: 2;
+    grid-column-end: 13;
+}
+
+.footer {
+    grid-column-start: 1;
+    grid-column-end: 13;
+}
+
+.container>div:nth-child(1n) {
+    background-color: #96ceb4;
+}
+
+.container>div:nth-child(3n) {
+    background-color: #88d8b0;
+}
+
+.container>div:nth-child(2n) {
+    background-color: #ff6f69;
+}
+
+.container>div:nth-child(4n) {
+    background-color: #ffcc5c;
+}
+```
+
+```css
+.header {
+    grid-column: 1 / 13;
+}
+
+.menu {
+    grid-column: 1 / 2;
+}
+
+.content {
+    grid-column: 2 / 13;
+}
+
+.footer {
+    grid-column: 1 / 13;
+}
+```
+
+```css
+.header {
+    grid-column: 1 / -1;
+}
+
+.menu {
+    grid-column: 1 / 2;
+}
+
+.content {
+    grid-column: 2 / -1;
+}
+
+.footer {
+    grid-column: 1 / -1;
+}
+
+```
+
+```css
+.header {
+    grid-column: 1 / span 12;
+}
+
+.menu {
+    grid-column: 1 / span 1;
+}
+
+.content {
+    grid-column: 2 / span 11;
+}
+
+.footer {
+    grid-column: 1 / span 12;
+}
+```
+
+<img width="1332" alt="image" src="https://github.com/user-attachments/assets/4356538c-947f-4da8-8028-23373ea3f1cc">
+
+### github_projects/project-css-grid-flex/my_app/src/components/Grid/GridStyles.css:
+
+```css
+.container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 40px 200px 40px;
+}
+
+.header {
+    grid-column: 2 / -1;
+}
+
+.menu {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 2;
+}
+
+.content {
+    grid-column: 2 / -1;
+}
+
+.footer {
+    grid-column: 1 / -1;
+}
+```
+
+<img width="1377" alt="image" src="https://github.com/user-attachments/assets/0577dbe5-71b1-430c-a258-2d4de33a122f">
+<img width="1385" alt="image" src="https://github.com/user-attachments/assets/ab4c4d9e-83d4-4353-8d3c-3f893ebd258f">
+<img width="1385" alt="image" src="https://github.com/user-attachments/assets/f33a89fc-832d-4ef5-b0e4-e1159d9c117a">
+
+</details>
+
+<details>
+<summary>5-positioning-items-in-grid-with grid-template-areas </summary>
+
+# 5-positioning-items-in-grid-with grid-template-areas
+
+```css
+
+```
+
+```css
+
+```
+
+```css
 
 ```
 
