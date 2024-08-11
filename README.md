@@ -117,11 +117,86 @@ body {
 </details>
 
 <details>
-<summary>3- </summary>
+<summary>3-grid-template-columns and grid-template-rows </summary>
 
-```html
+# 3-grid-template-columns and grid-template-rows
+
+### github_projects/project-css-grid-flex/my_app/src/components/Grid/GridStyles.css:
+
+```css
+.container>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #ffeead;
+    background-color: #ffeead;
+}
+
+.container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 100px auto 100px;
+    grid-template-rows: 40px 40px;
+}
+
+.container>div:nth-child(1n) {
+    background-color: #96ceb4;
+}
+
+.container>div:nth-child(3n) {
+    background-color: #88d8b0;
+}
+
+.container>div:nth-child(2n) {
+    background-color: #ff6f69;
+}
+
+.container>div:nth-child(4n) {
+    background-color: #ffcc5c;
+}
+```
+
+<img width="1332" alt="image" src="https://github.com/user-attachments/assets/6335bdc3-fd6b-4f22-b464-e70e26e6168f">
+
+### github_projects/project-css-grid-flex/my_app/src/components/Grid/GridStyles.css:
+
+```css
+.container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
 
 ```
+
+```css
+.container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+```
+
+```css
+.container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+}
+```
+
+<img width="1332" alt="image" src="https://github.com/user-attachments/assets/769e0c82-7a0f-46af-a136-126f109a8b93">
+
+</details>
+
+<details>
+<summary>4-grid- </summary>
+
+# 4-grid-
 
 ```css
 
