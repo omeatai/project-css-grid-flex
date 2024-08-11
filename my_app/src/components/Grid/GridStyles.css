@@ -10,7 +10,25 @@
 .container {
     display: grid;
     grid-gap: 5px;
-    grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 40px 200px 40px;
+}
+
+.header {
+    grid-column: 2 / -1;
+}
+
+.menu {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 2;
+}
+
+.content {
+    grid-column: 2 / -1;
+}
+
+.footer {
+    grid-column: 1 / -1;
 }
 
 .container>div:nth-child(1n) {
