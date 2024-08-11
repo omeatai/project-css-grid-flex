@@ -194,9 +194,9 @@ body {
 </details>
 
 <details>
-<summary>4-grid- </summary>
+<summary>4-positioning-items-in-grid-with grid-column-start and grid-column-end </summary>
 
-# 4-grid-
+# 4-positioning-items-in-grid-with grid-column-start and grid-column-end
 
 ```css
 
