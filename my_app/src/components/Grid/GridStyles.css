@@ -7,6 +7,12 @@
     background-color: #ffeead;
 }
 
+.container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+}
+
 .container>div:nth-child(1n) {
     background-color: #96ceb4;
 }
