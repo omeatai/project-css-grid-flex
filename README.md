@@ -207,10 +207,10 @@ import "./GridStyles.css";
 const Grid = () => {
   return (
     <section className="container">
-      <div class="header">HEADER</div>
-      <div class="menu">MENU</div>
-      <div class="content">CONTENT</div>
-      <div class="footer">FOOTER</div>
+      <div className="header">HEADER</div>
+      <div className="menu">MENU</div>
+      <div className="content">CONTENT</div>
+      <div className="footer">FOOTER</div>
     </section>
   );
 };
@@ -415,6 +415,142 @@ export default Grid;
 <summary>5-positioning-items-in-grid-with grid-template-areas </summary>
 
 # 5-positioning-items-in-grid-with grid-template-areas
+
+### github_projects/project-css-grid-flex/my_app/src/components/Grid/Grid.jsx:
+
+```jsx
+import React from "react";
+import "./GridStyles.css";
+
+const Grid = () => {
+  return (
+    <section className="container">
+      <div className="header">HEADER</div>
+      <div className="menu">MENU</div>
+      <div className="content">CONTENT</div>
+      <div className="footer">FOOTER</div>
+    </section>
+  );
+};
+
+export default Grid;
+
+```
+
+### github_projects/project-css-grid-flex/my_app/src/App.css:
+
+```css
+html,
+body {
+  overflow: hidden;
+  box-sizing: border-box;
+  height: 100vh;
+  padding: 10px;
+  background-color: #ffeead;
+}
+```
+
+### github_projects/project-css-grid-flex/my_app/src/components/Grid/GridStyles.css:
+
+```css
+.container>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #ffeead;
+    background-color: #ffeead;
+}
+
+.container {
+    overflow: hidden;
+    min-height: 95vh;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 40px auto 40px;
+    grid-template-areas:
+        ". h h h h h h h h h h h"
+        "m c c c c c c c c c c c"
+        "m f f f f f f f f f f f";
+}
+
+.header {
+    grid-area: h;
+}
+
+.menu {
+    grid-area: m;
+}
+
+.content {
+    grid-area: c;
+}
+
+.footer {
+    grid-area: f;
+}
+
+.container>div:nth-child(1n) {
+    background-color: #96ceb4;
+}
+
+.container>div:nth-child(3n) {
+    background-color: #88d8b0;
+}
+
+.container>div:nth-child(2n) {
+    background-color: #ff6f69;
+}
+
+.container>div:nth-child(4n) {
+    background-color: #ffcc5c;
+}
+```
+
+<img width="1149" alt="image" src="https://github.com/user-attachments/assets/dc2121e8-4433-49b3-89e6-d83093cf5142">
+<img width="1385" alt="image" src="https://github.com/user-attachments/assets/0ccccd00-7641-4200-bc87-a38b357653ad">
+<img width="1385" alt="image" src="https://github.com/user-attachments/assets/cae960ce-52df-4672-9799-3160f9584fb1">
+
+</details>
+
+<details>
+<summary>6-auto-fit and minmax </summary>
+
+# 6-auto-fit and minmax 
+
+```css
+
+```
+
+```css
+
+```
+
+```css
+
+```
+
+```css
+
+```
+
+```css
+
+```
+
+```css
+
+```
+
+```css
+
+```
+
+```css
+
+```
+
 
 ```css
 
