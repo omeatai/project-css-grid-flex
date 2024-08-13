@@ -519,17 +519,94 @@ body {
 
 # 6-auto-fit and minmax 
 
-```css
+### github_projects/project-css-grid-flex/my_app/src/components/Grid/Grid.jsx:
+
+```jsx
+import React from "react";
+import "./GridStyles.css";
+
+const Grid = () => {
+  return (
+    <section className="container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+      <div>10</div>
+      <div>11</div>
+      <div>12</div>
+    </section>
+  );
+};
+
+export default Grid;
 
 ```
 
-```css
-
-```
+### github_projects/project-css-grid-flex/my_app/src/App.css:
 
 ```css
-
+html,
+body {
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: #ffeead;
+  margin: 10px;
+}
 ```
+
+### github_projects/project-css-grid-flex/my_app/src/components/Grid/GridStyles.css:
+
+```css
+.container>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #ffeead;
+}
+
+.container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(12, 200px);
+}
+
+.container>div:nth-child(1n) {
+    background-color: #96ceb4;
+}
+
+.container>div:nth-child(3n) {
+    background-color: #88d8b0;
+}
+
+.container>div:nth-child(2n) {
+    background-color: #ff6f69;
+}
+
+.container>div:nth-child(4n) {
+    background-color: #ffcc5c;
+}
+```
+
+![image](https://github.com/user-attachments/assets/280f31eb-c11c-4bc1-80fc-62a3396b221e)
+
+<img width="1341" alt="image" src="https://github.com/user-attachments/assets/465f8811-7ede-4ef2-9315-7dd720ffe84e">
+<img width="1385" alt="image" src="https://github.com/user-attachments/assets/1c5e0f57-da29-47cf-abb2-768718464f10">
+<img width="1341" alt="image" src="https://github.com/user-attachments/assets/61859dee-baee-42fe-896f-2d44248aea9b">
+
+</details>
+
+<details>
+<summary>7-implicit-rows with grid-auto-row </summary>
+
+# 7-implicit-rows with grid-auto-row 
 
 ```css
 
