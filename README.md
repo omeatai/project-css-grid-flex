@@ -1,4 +1,6 @@
-## project-css-grid-flex
+## +Scrimba-Learn-CSS-Grid
+
+## [COURSE](https://v2.scrimba.com/learn-css-grid-c02k)
 
 <details>
 <summary>1-create-react-app </summary>
